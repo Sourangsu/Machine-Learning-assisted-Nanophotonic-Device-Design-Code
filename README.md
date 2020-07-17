@@ -1,2 +1,2 @@
-# -Machine-Learning-assisted-Nanophotonic-Device-Design
+# Machine-Learning-assisted-Nanophotonic-Device-Design
 This repository
