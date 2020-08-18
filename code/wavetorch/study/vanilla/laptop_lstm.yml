@@ -1,0 +1,53 @@
+general:
+  # Set a random seed if you want
+  rand_seed: 2019
+training:
+  # This prefix is applied to the filename when saving the model; if not specified a date/time is used
+  prefix: 
+  # Number of training epochs
+  N_epochs: 500
+  # Optimizer learning rate
+  lr: 0.001    
+  # Batch size     
+  batch_size: 9
+  # Total size of samples 
+  max_samples: 162
+  # 1/train_test_divide will go into test, the rest into train
+  train_test_divide: 3
+  # Use cross validation? 
+  use_cross_validation: false
+  # Display the test/train accuracy every display_step epochs
+  display_step: 10
+  # Decrease lr every # epochs
+  lr_step: 50
+  # Scale lr b a factor of
+  lr_gamma: 0.5
+data:
+  # Sampling rate to use for vowel data
+  sr: 10000
+  # Which gender to pull vowel data from. Can be one of women, men, or both. 
+  # If both, training and testing datasets distributed equally over the genders
+  gender: both
+  # Which vowel classes to train on.
+  # Can be any elements from the set: [ae, eh, ih, oo, ah, ei, iy, uh, aw, er, oa, uw].
+  vowels: 
+    - ae
+    - ei
+    - iy
+  # Crop the input data to a number of points in the middle
+  window_size: 1000
+rnn:
+  # Hidden state size of the RNN
+  N_hidden: 40
+  # Hidden-to-hidden activation function, can be anything from torch.nn.functional, 
+  # e.g. relu, leaky_relu or logsigmoid, or None for linear
+  f_hidden: 
+  # Scale for initializing the W-matrices
+  W_scale: 0.2
+  # L2 regularization 
+  L2_reg: 0.00001 
+  # Gradient clipping. Maximum absolute value of the gradient, blank for None
+  grad_clip: 10
+  # Model, 'rnn', 'res' or 'lstm', see the associated Custom### class files
+  model: 'lstm'
+
